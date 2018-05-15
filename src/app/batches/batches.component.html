@@ -1,0 +1,17 @@
+<div>
+    <h3 style="text-align: center; margin: 2%;">Batches</h3>
+    <div class="row container">
+      <div *ngFor="let batch of batchList" style="margin: 1%;">
+        <div class="card col-sm-12">
+          <div class="card-body"  align="center">
+            <h4 class="card-title">{{batch.name}}</h4>
+            <p class="card-text">Course <br/>
+            {{batch.course.name}}
+            </p>
+          </div>
+          <a class="dropdown-item btn" [routerLink]="['/lectures', 'view', batch.course.id, batch.id, batch.name]" style="text-align: center;"><button class="btn">View Lectures</button></a>
+          <a class="dropdown-item btn" [routerLink]="['/lectures', 'add', batch.course.id, batch.id, batch.name]" style="text-align: center;"><button class="btn">Add Lecture</button></a>
+        </div>
+      </div>
+    </div>
+  </div>

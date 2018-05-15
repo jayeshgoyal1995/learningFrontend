@@ -1,0 +1,16 @@
+<div>
+  <h3 style="text-align: center; margin: 2%;">Teachers</h3>
+  <div class="row container">
+    <div *ngFor="let teacher of teacherList" style="margin: 1%;">
+      <div class="card col-sm-12">
+        <div class="card-body" align="center">
+          <h4 class="card-title">{{teacher.name}}</h4>
+          <p class="card-text">Subject
+            <br/> {{teacher.subject.name}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a class="dropdown-item btn" [routerLink]="['/teachers', 'add']" style="text-align: center;"><button class="btn">Add Teacher</button></a>
+</div>

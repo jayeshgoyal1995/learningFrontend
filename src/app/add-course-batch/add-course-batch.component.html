@@ -1,0 +1,15 @@
+<h3 style="text-align:center; margin: 3%;">Create Batch for Course: {{cname}}</h3>
+<form (submit)="submitBatch(batchName)" style="margin-top: 2%;">
+    <div class="form-group row">
+      <label for="batchName" class="col-sm-2 offset-4 col-form-label">Batch Name :</label>
+      <div class="col-sm-3">
+        <input type="text" class="form-control" [(ngModel)]="batchName" name="batchName" placeholder="Batch Name" required>
+      </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-2 offset-sm-6 btn-group">
+          <button type="submit" class="btn btn-dark">Create Batch</button>
+          <app-back></app-back>
+      </div>
+    </div>
+</form>

@@ -1,0 +1,17 @@
+<div *ngIf="student">
+  <h3  style="text-align: center; margin: 3%;">Student Detail</h3>
+  <div class="row container">
+    <div style="margin: 1%;">
+      <div class="card col-sm-12 offset-sm-6">
+        <div class="card-body" align="center">
+          <h4 class="card-title">Name: {{student.name}}</h4>
+          <h5 class="card-title">Id: {{student.id}}</h5>
+          <br/> Other student details go here.<br/>
+          <a class="dropdown-item btn" [routerLink]="['/students', 'enroll', student.id, student.name]" style="text-align: center;">
+            <button class="btn">Enroll Student</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div>
+  <div class="row container">
+    <div *ngFor="let course of courseList" style="margin: 1%;">
+      <div class="card col-sm-12">
+        <div class="card-body" align="center">
+          <h5 class="card-title">Course: {{course.name}}</h5><br/>
+          <a class="dropdown-item btn" [routerLink]="['/courses', course.id, course.name, 'batches', 'add']"><button class="btn">New Batch</button></a>
+          <a class=" dropdown-item btn" [routerLink]="['/courses', course.id, course.name,'batches']"><button class="btn">View Batches</button></a>
+        </div>
+      </div>
+    </div>
+    <a class="dropdown-item btn" [routerLink]="['/courses', 'add']" style="text-align: center;"><button class="btn">Create New Course</button></a>
+  </div>
+</div>

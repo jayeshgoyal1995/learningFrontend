@@ -1,0 +1,30 @@
+<h3 style="text-align:center; margin: 3%;">Enroll Student</h3>
+<form (submit)="enrollStudent(batchId)" style="margin-top: 2%;">
+    <div class="form-group row">
+        <label for="studentname" class="col-sm-2 offset-4 col-form-label">Student Name :</label>
+        <div class="col-sm-3">
+            <label class="col-form-label">{{sname}}</label>
+          </div>
+    </div>
+    <div class="form-group row">
+        <label for="studentid" class="col-sm-2 offset-4 col-form-label">Student Id :</label>
+        <div class="col-sm-3">
+            <label class="col-form-label">{{sid}}</label>
+          </div>
+    </div>
+    <div class="form-group row">
+        <label for="batch" class="col-sm-2 offset-4 col-form-label">Batch :</label>
+        <div class="col-sm-3">
+          <select class="form-control" [(ngModel)]="batchId" name="batchId" required>
+            <option disabled checked>Please select one</option>
+            <option *ngFor="let batch of batchList" [value]="batch.id">{{batch.name}}</option>
+          </select>
+        </div>
+      </div>
+    <div class="form-group row">
+        <div class="col-sm-2 offset-sm-6 btn-group">
+          <button type="submit" class="btn btn-dark">Enroll</button>
+          <app-back></app-back>
+      </div>
+    </div>
+</form>

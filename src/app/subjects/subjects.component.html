@@ -1,0 +1,20 @@
+<div>
+  <div *ngIf="subjectList && subjectList.length>0">
+    <h3 style="text-align: center; margin: 2%;">Subjects</h3>
+    <div class="row container">
+      <div *ngFor="let subject of subjectList" style="margin: 1%;">
+        <div class="card col-sm-12">
+          <div class="card-body" align="center">
+            <h4 class="card-title">{{subject.name}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!subjectList || subjectList.length==0">
+    <h3 style="text-align: center; margin: 2%;">No subject are present in the database.</h3>
+  </div>
+  <a class="dropdown-item btn" [routerLink]="['/subjects', 'add']" style="text-align: center;">
+    <button class="btn">Add Subject</button>
+  </a>
+</div>

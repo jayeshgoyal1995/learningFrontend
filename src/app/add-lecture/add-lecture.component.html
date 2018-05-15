@@ -1,0 +1,30 @@
+<h3 style="text-align:center; margin: 3%;">Lecture Details</h3>
+<form (submit)="submitLecture(lectureName, subjectId)" style="margin-top: 2%;">
+    <div class="form-group row">
+        <label for="batchname" class="col-sm-2 offset-4 col-form-label">Batch Name :</label>
+        <div class="col-sm-3">
+            <label class="col-form-label">{{bname}}</label>
+          </div>
+    </div>
+    <div class="form-group row">
+        <label for="lectureName" class="col-sm-2 offset-4 col-form-label">Lecture Name :</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control" [(ngModel)]="lectureName" name="lectureName" placeholder="Lecture Name" required/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="subject" class="col-sm-2 offset-4 col-form-label">Subject :</label>
+        <div class="col-sm-3">
+          <select class="form-control" [(ngModel)]="subjectId" name="subjectId" required>
+            <option disabled checked>Please select one</option>
+            <option *ngFor="let subject of subjectList" [value]="subject.id">{{subject.name}}</option>
+          </select>
+        </div>
+      </div>
+    <div class="form-group row">
+        <div class="col-sm-2 offset-sm-6 btn-group">
+          <button type="submit" class="btn btn-dark">Add</button>
+          <app-back></app-back>
+      </div>
+    </div>
+</form>

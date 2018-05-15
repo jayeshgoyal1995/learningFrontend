@@ -1,0 +1,25 @@
+<div>
+  <div *ngIf="studentList && studentList.length>0">
+    <h3 style="text-align: center; margin: 2%;">Students</h3>
+    <div class="row container">
+      <div *ngFor="let student of studentList" style="margin: 1%;">
+        
+          <div class="card col-sm-12">
+            <div class="card-body" align="center">
+                <a [routerLink]="['/students', 'detail', student.id]">
+              <h4 class="card-title">{{student.name}}</h4></a>
+              <a class="dropdown-item btn" [routerLink]="['/students', 'enroll', student.id, student.name]" style="text-align: center;">
+                <button class="btn">Enroll Student</button>
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!studentList || studentList.length==0">
+    <h3 style="text-align: center; margin: 2%;">No students are present in the database.</h3>
+  </div>
+  <a class="dropdown-item btn" [routerLink]="['/students', 'add']" style="text-align: center;">
+    <button class="btn">Add Student</button>
+  </a>
+</div>

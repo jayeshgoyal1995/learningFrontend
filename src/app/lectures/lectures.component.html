@@ -1,0 +1,23 @@
+<div>
+    <div *ngIf="lectureList && lectureList.length>0">
+      <h3 style="text-align: center; margin: 2%;">Lectures for Batch: {{bname}}</h3>
+      <div class="row container">
+        <div *ngFor="let lecture of lectureList" style="margin: 1%;">
+          <div class="card col-sm-12">
+            <div class="card-body" align="center">
+              <h4 class="card-title">{{lecture.name}}</h4>
+              <p>Subject<br/>
+                {{lecture.subject.name}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!lectureList || lectureList.length==0">
+      <h3 style="text-align: center; margin: 2%;">No lecture are present for this batch.</h3>
+    </div>
+    <a class="dropdown-item btn" [routerLink]="['/lectures', 'add', cid, bid, bname]" style="text-align: center;">
+      <button class="btn">Add Lecture</button>
+    </a>
+  </div>

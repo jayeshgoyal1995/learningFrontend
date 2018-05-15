@@ -1,0 +1,21 @@
+<div>
+  <div *ngIf="batchList && batchList.length>0">
+    <h3 style="text-align: center; margin: 2%;">Batches Available for Course: {{cname}}</h3>
+    <div class="row container">
+      <div *ngFor="let batch of batchList" style="margin: 1%;">
+        <div class="card col-sm-12">
+          <div class="card-body" align="center">
+            <h4 class="card-title">{{batch.name}}</h4>
+            <p class="card-text">Course
+              <br/> {{batch.course.name}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!batchList || batchList.length==0">
+      <h3 style="text-align: center; margin: 2%;">Sorry, no batches are available for this course</h3>
+      <a class="dropdown-item btn" [routerLink]="['/courses', cid, cname, 'batches', 'add']" style="text-align: center;"><button class="btn">Create New Batch</button></a>
+  </div>
+</div>
